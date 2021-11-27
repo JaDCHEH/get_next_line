@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 15:09:45 by cjad              #+#    #+#             */
-/*   Updated: 2021/11/27 17:02:34 by cjad             ###   ########.fr       */
+/*   Updated: 2021/11/27 16:39:03 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strchr(const char	*s, int c)
 		return (NULL);
 }
 
-void	strfree(char **s)
+void	ft_strdel(char **s)
 {
 	if (s != NULL)
 	{
@@ -60,12 +60,12 @@ char	*find_line(char	**s, int r)
 		free(*s);
 		(*s) = temp;
 		if ((*s)[0] == '\0')
-			strfree(s);
+			ft_strdel(s);
 	}
 	else
 	{
 		str = ft_strdup((*s));
-		strfree(s);
+		ft_strdel(s);
 	}
 	return (str);
 }
